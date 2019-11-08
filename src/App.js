@@ -6,7 +6,7 @@ import Loader from './components/Loader';
 import './normalise.css';
 import './App.css';
 
-// Only load these components once we are done fetching data
+// Only load these components once we are done fetching data. Once data is fetched pass it as a prop into Airport List Component
 const AirportList = lazy(() => import('./components/AirportList'));
 const AirportData = fetchData();
 
