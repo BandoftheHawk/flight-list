@@ -1,12 +1,13 @@
 import React, {useState, useEffect, Suspense} from 'react';
 import {Link, Route,Switch} from 'react-router-dom';
 import Airport from "./Airport";
-
+// set number of rows you want to see
 const NoOfRows = 250;
 
 const AirportList = (props) =>{
-
+    // Set pagination page
     const [page, setPage] = useState(1);
+    // get first 250 rows from props data
     const [results, setResults] = useState(props.data.slice(0,NoOfRows).map(i => i));
 
     const paginateUp = () =>{
@@ -28,7 +29,7 @@ const AirportList = (props) =>{
     return (
         <>
             <Switch>
-
+                // use switch here so that component is not rerendered after going back from airport detail view and user can remain on same pagination page
                 <Route exact path="/airport/:id" component={Airport} />
 
                 <Route exact path="/" render={()=>{
@@ -45,7 +46,7 @@ const AirportList = (props) =>{
                                     </button>
                                 </div>
                             </header>
-
+                            // render rows 
                             <div className="container">
                                 <div className="list-group">
                                     {results.map((airport,i)=>{
