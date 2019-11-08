@@ -14,7 +14,6 @@ const AirportList = (props) =>{
             setPage(page + 1);
             let start = NoOfRows * page;
             let end = (NoOfRows * (page + 1) > props.data.length ? props.data.length : results.length * (page + 1));
-            console.log(end);
             setResults(props.data.slice(start,end).map(i => i));
         }
     }
@@ -26,7 +25,6 @@ const AirportList = (props) =>{
             setResults(props.data.slice(start,end).map(i => i));
         }
     }
-    console.log(props.data);
     return (
         <>
             <Switch>
